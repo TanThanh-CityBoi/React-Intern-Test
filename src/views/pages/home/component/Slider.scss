@@ -1,0 +1,15 @@
+.slider-wrapper {
+    display: flex;
+    padding: 10px 0px;
+
+    .slider-item {
+        margin-right: 10px;
+        button {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.11;
+            height: 80px;
+            width: 200px;
+        }
+    }
+}

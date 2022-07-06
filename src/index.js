@@ -4,10 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+import rootReducer from './reducers';
+import thunk from 'redux-thunk';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from 'redux';
+
+/* import {createBrowserHistory} from 'history';
+const history = createBrowserHistory(); */
+
+
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <Provider store={createStoreWithMiddleware(rootReducer)}>
+        <App />
+    </Provider>
   </React.StrictMode>
 );
 
